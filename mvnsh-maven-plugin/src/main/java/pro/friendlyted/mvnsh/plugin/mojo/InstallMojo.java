@@ -8,7 +8,7 @@ import pro.friendlyted.mvnsh.core.api.MsUpload;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 @Mojo(
         name = "install",

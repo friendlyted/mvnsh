@@ -8,7 +8,7 @@ import pro.friendlyted.mvnsh.core.processor.MavenMsInstall;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public interface MsFactory {
 

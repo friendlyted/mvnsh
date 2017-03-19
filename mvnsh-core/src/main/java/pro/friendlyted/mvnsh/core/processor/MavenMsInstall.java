@@ -8,7 +8,7 @@ import pro.friendlyted.mvnsh.core.api.MsInstall;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class MavenMsInstall extends AbstractMavenUploadProcessor implements MsInstall {
 

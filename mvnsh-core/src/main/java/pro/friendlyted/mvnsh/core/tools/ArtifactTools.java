@@ -8,7 +8,7 @@ import static pro.friendlyted.mvnsh.core.api.MvnshConsts.*;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class ArtifactTools {
 

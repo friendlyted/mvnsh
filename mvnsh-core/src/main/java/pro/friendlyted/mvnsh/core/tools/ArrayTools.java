@@ -4,7 +4,7 @@ import java.util.function.Function;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class ArrayTools {
 

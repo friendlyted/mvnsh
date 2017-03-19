@@ -17,7 +17,7 @@ import pro.friendlyted.mvnsh.core.tools.DownloadTools;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class ScriptPreparer {
 

@@ -9,7 +9,7 @@ import pro.friendlyted.mvnsh.core.api.MsDeploy;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class MavenMsDeploy extends AbstractMavenUploadProcessor implements MsDeploy {
 

@@ -14,7 +14,7 @@ import pro.friendlyted.mvnsh.core.tools.ScriptTools;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class MavenMsExec implements MsExec {
 

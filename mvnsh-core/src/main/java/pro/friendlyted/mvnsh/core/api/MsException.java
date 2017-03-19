@@ -2,7 +2,7 @@ package pro.friendlyted.mvnsh.core.api;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class MsException extends Exception {
 

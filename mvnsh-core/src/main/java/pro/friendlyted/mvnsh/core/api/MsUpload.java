@@ -7,7 +7,7 @@ import pro.friendlyted.mvnsh.core.FilesProvider;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public interface MsUpload {
 

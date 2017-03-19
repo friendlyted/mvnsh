@@ -11,7 +11,7 @@ import org.eclipse.aether.artifact.Artifact;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class LocalFileTools {
 

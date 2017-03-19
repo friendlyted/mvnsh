@@ -7,8 +7,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 /**
- *
- * @author Fedor
+ * 
+ * @author Fedor Resnyanskiy
  */
 public class StreamProxy implements Runnable {
 

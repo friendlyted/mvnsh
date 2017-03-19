@@ -11,10 +11,13 @@ import org.eclipse.aether.resolution.ArtifactResult;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class DownloadTools {
 
+    private DownloadTools() {
+    }
+    
     public static Artifact getRemoteArtifact(
             final Artifact localArtifact,
             List<RemoteRepository> remoteRepos,

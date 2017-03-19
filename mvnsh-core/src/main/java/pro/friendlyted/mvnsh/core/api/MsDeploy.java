@@ -5,7 +5,7 @@ import org.eclipse.aether.repository.RemoteRepository;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public interface MsDeploy extends MsUpload {
 

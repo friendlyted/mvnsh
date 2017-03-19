@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class DirectiveProcessor {
 

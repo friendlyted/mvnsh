@@ -2,10 +2,13 @@ package pro.friendlyted.mvnsh.core.tools;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public class ExceptionTools {
 
+    private ExceptionTools() {
+    }
+    
     public static final String PARAMETER_MUST_BE_SPECIFIED = "Parameter '%s' must be specified";
     public static final String WRONG_FORMAT = "Executable '%s' has wrong format";
 

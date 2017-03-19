@@ -4,7 +4,7 @@ import org.eclipse.aether.artifact.DefaultArtifact;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public interface MsInstall extends MsUpload {
 

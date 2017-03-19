@@ -13,7 +13,7 @@ import static pro.friendlyted.mvnsh.core.api.MvnshConsts.*;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public abstract class AbstractMavenUploadProcessor implements MsUpload {
 

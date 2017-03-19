@@ -4,7 +4,7 @@ import java.io.File;
 
 /**
  *
- * @author Fedor
+ * @author Fedor Resnyanskiy
  */
 public interface FilesProvider {
 
