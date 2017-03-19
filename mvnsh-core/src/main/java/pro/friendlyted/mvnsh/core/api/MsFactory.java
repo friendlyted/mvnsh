@@ -18,7 +18,7 @@ public interface MsFactory {
 
     MsExec exec();
 
-    MsCollect get();
+    MsCollect collect();
 
     MsDownload download();
 
@@ -39,7 +39,7 @@ public interface MsFactory {
         }
 
         @Override
-        public MsCollect get() {
+        public MsCollect collect() {
             return new MavenMsCollect();
         }
 
