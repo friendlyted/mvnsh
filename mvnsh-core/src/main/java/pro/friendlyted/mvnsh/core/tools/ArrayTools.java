@@ -1,6 +1,6 @@
 package pro.friendlyted.mvnsh.core.tools;
 
-import java.util.function.Function;
+import java.util.function.UnaryOperator;
 
 /**
  *
@@ -11,7 +11,7 @@ public class ArrayTools {
     private ArrayTools() {
     }
 
-    public static void replaceInIndex(String[] toReplace, int index, Function<String, String> replacer) {
+    public static <T> void replaceInIndex(T[] toReplace, int index, UnaryOperator<T> replacer) {
         toReplace[index] = replacer.apply(toReplace[index]);
     }
 
