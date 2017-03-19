@@ -63,7 +63,7 @@ public class CollectMojo extends AbstractMojo {
         }
 
         try {
-            final MsCollect getter = MsFactory.MAVEN.collect();
+            final MsCollect getter = MsFactory.MAVEN.get();
 
             getter.setWorkdir(workdir);
             getter.setFullPath(fullPath);
