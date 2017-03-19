@@ -18,11 +18,11 @@ When scripts was installed into artifactory, we can download them with **downloa
 **collect** goal assumes allows to extract script with all dependencies into specified directory.
 **exec** goal includes scripts collecting as well, but also executes them after.
 
-Parameter **exec.artifact** using to specify script to download/execute in format <group_id>/<artifact_id>/<version>/<type>/<script>.
+Parameter **exec.artifact** using to specify script to download/execute in format &lt;group_id>/&lt;artifact_id>/&lt;version>/&lt;type>/&lt;script>.
 
 ## Dependencies
 
-Scripts can use @mvnsh <source> directive to include external scripts. <source>
+Scripts can use @mvnsh &lt;source> directive to include external scripts.
 
 ## Configuration
 
