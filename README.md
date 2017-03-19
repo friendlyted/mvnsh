@@ -10,6 +10,7 @@ Working with mvnsh consist of uploading scripts into remote artifactory and down
 
 After developing scripts they may be upload to artifactory with **install** (for locally) or **deploy** (for remotely) goals.
 To execute goal correctly, its need to specify plugin's parameter **scriptsList** with existed scripts directory.
+All relative directories inside of basedir will be replaced with dot-names (relative/path.sh -> relative.path.sh).
 
 ### Download (download/collect/exec)
 
@@ -96,7 +97,7 @@ You can shorten plugin name in shell by adding following instructions inside of 
 </settings>
 ```
 
-After that, you can execute pluginc with foloowing instruction:
+After that, you can execute plugin with following instruction:
 
 ```
 mvn mvnsh:exec -Dexec.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/bat.one.bat_one
