@@ -2,6 +2,15 @@
 
 Maven tools to manage shell/bat scripts in maven artifactory
 
+## Quick start
+
+```
+mvn archetype:generate -DarchetypeArtifactId=mvnsh-archetype -DarchetypeGroupId=pro.friendlyted -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=group -DartifactId=artifact -Dversion=123
+cd artifact
+mvn install
+mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dexec.artifact=group/artifact/123/bat/win.one
+```
+
 ## Overview
 
 Working with mvnsh consist of uploading scripts into remote artifactory and download them back to local.
@@ -80,7 +89,6 @@ Scripts can use @mvnsh &lt;source> directive to include external scripts.
 ```
 mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dexec.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/bat.one.bat_one
 ```
-
 
 ## Shorter plugin name
 
