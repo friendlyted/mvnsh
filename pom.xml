@@ -10,6 +10,7 @@
         <module>mvnsh-scripts</module>
         <module>mvnsh-core</module>
         <module>mvnsh-maven-plugin</module>
+        <module>mvnsh-archetype</module>
     </modules>
     
     <dependencyManagement>

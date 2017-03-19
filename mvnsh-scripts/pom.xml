@@ -9,18 +9,10 @@
     <artifactId>mvnsh-scripts</artifactId>
     <packaging>pom</packaging>
     
-    <distributionManagement>
-        <repository>
-            <id>sbsoft</id>
-            <name>sbsoft</name>
-            <!--<url>http://192.168.0.61:8081/artifactory/libs-release-local/</url>-->
-        </repository>
-        <snapshotRepository>
-            <id>sbsoft</id>
-            <name>sbsoft</name>
-            <!--<url>http://192.168.0.61:8081/artifactory/libs-snapshot-local/</url>-->
-        </snapshotRepository>
-    </distributionManagement>
+    <properties>
+        <mvnsh.target>${project.build.directory}/mvnsh</mvnsh.target>
+        <this>${groupId}/${artifactId}/${version}</this>
+    </properties>
     
     <build>
         <pluginManagement>
@@ -48,7 +40,7 @@
                     <configuration>
                         <scriptsList>
                             <scripts>
-                                <basedir>${basedir}/src/main/resources</basedir>
+                                <basedir>${mvnsh.target}</basedir>
                                 <includes>
                                     <include>**/*.sh</include>
                                     <include>**/*.bat</include>
@@ -57,12 +49,39 @@
                         </scriptsList>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>3.0.2</version>
+                    <executions>
+                        <execution>
+                            <id>prepare-scripts</id>
+                            <goals>
+                                <goal>copy-resources</goal>
+                            </goals>
+                            <phase>process-resources</phase>
+                        </execution>                        
+                    </executions>
+                    <configuration>
+                        <resources>
+                            <resource>
+                                <filtering>true</filtering>
+                                <directory>src/main/resources</directory>
+                            </resource>
+                        </resources>
+                        <outputDirectory>${mvnsh.target}</outputDirectory>
+                        <escapeString>\</escapeString>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>pro.friendlyted</groupId>
                 <artifactId>mvnsh-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
