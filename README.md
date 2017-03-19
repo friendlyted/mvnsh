@@ -1,6 +1,6 @@
 # mvnsh
 
-Maven tools to manage shell/bat scripts in artifactory
+Maven tools to manage shell/bat scripts in maven artifactory
 
 ## Overview
 
