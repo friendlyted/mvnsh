@@ -64,12 +64,14 @@ public class ScriptPreparer {
             dp.setDirective(MVNSH_DIRECTIVE);
             dp.setDirectiveArgumentsProcessor((arguments) -> {
                 ArrayTools.replaceInIndex(arguments, 0, string -> {
-                    final Artifact parsed = ArtifactTools.parseArtifact(string);
+                    final String artifactString = string.replaceAll("([\"'])(.*)(\\1)", "$2");
+                    final Artifact parsed = ArtifactTools.parseArtifact(artifactString);
                     final Artifact remoteArtifact = DownloadTools.getRemoteArtifact(parsed, remoteRepos, repoSystem, repoSession);
                     final ScriptPreparer preparer = new ScriptPreparer(localDir);
                     preparer.setFullPath(fullPath);
                     final File file = preparer.prepareScript(remoteArtifact, remoteRepos, repoSystem, repoSession);
-                    return file.getAbsolutePath();
+                    final String wrappingString = string.replaceAll("([\"'])(.*)(\\1)", "$1%s$1");
+                    return String.format(wrappingString, file.getAbsolutePath());
                 });
             });
 
