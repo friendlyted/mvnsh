@@ -9,6 +9,8 @@
     <artifactId>mvnsh-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
     
+    <description>Adapter from mvnsh to maven environment.</description>
+    
     <dependencies>
         <dependency>
             <groupId>org.apache.maven</groupId>

@@ -9,6 +9,8 @@
     <artifactId>mvnsh-archetype</artifactId>
     <packaging>maven-plugin</packaging>
     
+    <description>Archetype for simple srcipts project. Contains some example scripts.</description>
+    
     <build>
         <pluginManagement>
             <plugins>

@@ -9,6 +9,8 @@
     <artifactId>mvnsh-scripts</artifactId>
     <packaging>pom</packaging>
     
+    <description>Examples of scripts</description>
+    
     <properties>
         <mvnsh.target>${project.build.directory}/mvnsh</mvnsh.target>
         <this>${groupId}/${artifactId}/${version}</this>

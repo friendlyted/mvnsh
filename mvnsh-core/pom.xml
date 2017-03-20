@@ -9,6 +9,8 @@
     <artifactId>mvnsh-core</artifactId>
     <packaging>bundle</packaging>
     
+    <description>Contains all of mvnsh functionality. Entry point is 'pro.friendlyted.mvnsh.core.api.MsFactory'</description>
+    
     <dependencies>
         <dependency>
             <groupId>org.eclipse.aether</groupId>
