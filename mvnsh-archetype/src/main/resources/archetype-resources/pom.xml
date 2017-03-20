@@ -7,6 +7,15 @@
     <version>\${version}</version>
     <packaging>pom</packaging>
     
+    <!--
+    <distributionManagement>
+        <repository>
+            <id>domain-artifactory</id>
+            <url>repository_url</url>
+        </repository>
+    </distributionManagement>
+    -->
+    
     <properties>
         <mvnsh.target>\${dollar}{project.build.directory}/mvnsh</mvnsh.target>
         <this>\${dollar}{groupId}/\${dollar}{artifactId}/\${dollar}{version}</this>

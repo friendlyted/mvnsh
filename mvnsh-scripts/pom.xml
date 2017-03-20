@@ -16,15 +16,6 @@
         <this>${groupId}/${artifactId}/${version}</this>
     </properties>
     
-    <!--
-    <distributionManagement>
-        <repository>
-            <id>test</id>
-            <url>http://127.0.0.1:8081/artifactory/example-repo-local/</url>
-        </repository>
-    </distributionManagement>
-    -->
-    
     <build>
         <pluginManagement>
             <plugins>
