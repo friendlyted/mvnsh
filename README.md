@@ -94,7 +94,7 @@ Scripts can use @mvnsh &lt;source> directive to include external scripts.
 ### Example of execution installed scripts:
 
 ```
-mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dmvnsh.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/bat.one.bat_one
+mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dmvnsh.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/win.one
 ```
 
 ## Shorter plugin name
@@ -115,5 +115,5 @@ You can shorten plugin name in shell by adding following instructions inside of 
 After that, you can execute plugin with following instruction:
 
 ```
-mvn mvnsh:exec -Dmvnsh.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/bat.one.bat_one
+mvn mvnsh:exec -Dmvnsh.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/win.one
 ```
