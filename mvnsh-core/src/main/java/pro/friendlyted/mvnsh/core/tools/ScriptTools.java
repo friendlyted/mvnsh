@@ -17,6 +17,7 @@ public class ScriptTools {
             final Process p = Runtime.getRuntime().exec(script.getAbsolutePath());
             new Thread(new StreamProxy(p.getInputStream(), System.out)).start();
             new Thread(new StreamProxy(p.getErrorStream(), System.err)).start();
+            new Thread(new StreamProxy(System.in, p.getOutputStream())).start();
 
             try {
                 p.waitFor();

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 /**
- * 
+ *
  * @author Fedor Resnyanskiy
  */
 public class StreamProxy implements Runnable {
@@ -23,11 +23,11 @@ public class StreamProxy implements Runnable {
     @Override
     public void run() {
         try {
-            final BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
-            String line;
-            while ((line = in.readLine()) != null) {
-                outputStream.write(line.getBytes());
-                outputStream.write('\n');
+            byte[] buffer = new byte[1024];
+            int len;
+            while ((len = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, len);
+                outputStream.flush();
             }
         } catch (IOException ex) {
             ex.printStackTrace();
