@@ -1,6 +1,5 @@
 package pro.friendlyted.mvnsh.plugin.mojo;
 
-import java.io.File;
 import java.util.List;
 
 import org.apache.maven.plugin.AbstractMojo;
@@ -16,11 +15,9 @@ import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
 import pro.friendlyted.mvnsh.core.api.MsDownload;
-import pro.friendlyted.mvnsh.core.api.MsExec;
 import pro.friendlyted.mvnsh.core.api.MsFactory;
 import pro.friendlyted.mvnsh.core.tools.ExceptionTools;
 import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.ARTIFACT_PARAMETER;
-import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.WORKDIR_PARAMETER;
 
 /**
  * Executes script from Maven Repository
