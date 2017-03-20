@@ -11,6 +11,13 @@ mvn install
 mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dexec.artifact=group/artifact/123/bat/win.one
 ```
 
+## Requirements
+
+- JRE >= 1.8.0
+- maven >= 3.3.9
+
+There is no java compilation in mvnsh, so JDK is unnecessary.
+
 ## Overview
 
 Working with mvnsh consist of uploading scripts into remote artifactory and download them back to local.
