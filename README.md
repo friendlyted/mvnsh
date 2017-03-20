@@ -8,7 +8,7 @@ Maven tools to manage shell/bat scripts in maven artifactory
 mvn archetype:generate -DarchetypeArtifactId=mvnsh-archetype -DarchetypeGroupId=pro.friendlyted -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=group -DartifactId=artifact -Dversion=123
 cd artifact
 mvn install
-mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dexec.artifact=group/artifact/123/bat/win.one
+mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dmvnsh.artifact=group/artifact/123/bat/win.one
 ```
 
 ## Requirements
@@ -34,7 +34,7 @@ When scripts was installed into artifactory, we can download them with **downloa
 **collect** goal assumes allows to extract script with all dependencies into specified directory.
 **exec** goal includes scripts collecting as well, but also executes them after.
 
-Parameter **exec.artifact** using to specify script to download/execute in format &lt;group_id>/&lt;artifact_id>/&lt;version>/&lt;type>/&lt;script>.
+Parameter **mvnsh.artifact** using to specify script to download/execute in format &lt;group_id>/&lt;artifact_id>/&lt;version>/&lt;type>/&lt;script>.
 
 ## Dependencies
 
@@ -94,7 +94,7 @@ Scripts can use @mvnsh &lt;source> directive to include external scripts.
 ### Example of execution installed scripts:
 
 ```
-mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dexec.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/bat.one.bat_one
+mvn pro.friendlyted:mvnsh-maven-plugin:1.0-SNAPSHOT:exec -Dmvnsh.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/bat.one.bat_one
 ```
 
 ## Shorter plugin name
@@ -115,5 +115,5 @@ You can shorten plugin name in shell by adding following instructions inside of 
 After that, you can execute plugin with following instruction:
 
 ```
-mvn mvnsh:exec -Dexec.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/bat.one.bat_one
+mvn mvnsh:exec -Dmvnsh.artifact=pro.friendlyted/mvnsh-scripts/1.0-SNAPSHOT/bat/bat.one.bat_one
 ```
