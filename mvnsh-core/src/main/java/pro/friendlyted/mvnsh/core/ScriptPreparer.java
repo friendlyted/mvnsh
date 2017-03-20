@@ -82,6 +82,7 @@ public class ScriptPreparer {
             }
             destination.getParentFile().mkdirs();
             final Path path = Files.write(destination.toPath(), preparedContent.toString().getBytes(charset));
+            destination.setExecutable(true);
             System.out.println("File created: " + path);
             return destination;
         } catch (IOException ex) {
