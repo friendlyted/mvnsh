@@ -3,13 +3,10 @@ package pro.friendlyted.mvnsh.core.processor;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
@@ -30,7 +27,13 @@ public class MavenMsCollect implements MsCollect {
     private RepositorySystem repoSystem;
     private RepositorySystemSession repoSession;
     private File workdir;
+    private String startScript;
     private boolean fullPath = true;
+
+    @Override
+    public void setStartScript(String startScript) {
+        this.startScript = startScript;
+    }
 
     @Override
     public void collect(String artifact) throws MsException {
@@ -54,17 +57,14 @@ public class MavenMsCollect implements MsCollect {
             baos.write('\n');
         }
 
-        final File start = new File(workdir, "start." + (isWindows() ? "bat" : "sh"));
-
-        try {
-            Files.write(start.toPath(), baos.toByteArray());
-        } catch (IOException ex) {
-            throw new MsException("Cannot create start script " + start, ex);
+        if (startScript != null) {
+            final File start = new File(workdir, startScript);
+            try {
+                Files.write(start.toPath(), baos.toByteArray());
+            } catch (IOException ex) {
+                throw new MsException("Cannot create start script " + start, ex);
+            }
         }
-    }
-
-    private boolean isWindows() {
-        return System.getProperty("os.name").startsWith("Windows");
     }
 
     @Override

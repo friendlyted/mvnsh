@@ -6,5 +6,7 @@ package pro.friendlyted.mvnsh.core.api;
  */
 public interface MsCollect extends IHasRemotes, IHasWorkdir {
 
+    void setStartScript(String startScript);
+
     void collect(String artifact) throws MsException;
 }

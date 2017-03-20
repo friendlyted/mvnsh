@@ -17,9 +17,7 @@ import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
 import pro.friendlyted.mvnsh.core.api.MsFactory;
 import pro.friendlyted.mvnsh.core.tools.ExceptionTools;
-import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.ARTIFACT_PARAMETER;
-import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.FULLPATH_PARAMETER;
-import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.WORKDIR_PARAMETER;
+import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.*;
 import pro.friendlyted.mvnsh.core.api.MsCollect;
 
 /**
@@ -47,6 +45,9 @@ public class CollectMojo extends AbstractMojo {
     @Parameter(property = FULLPATH_PARAMETER, defaultValue = "true")
     private boolean fullPath;
 
+    @Parameter(property = START_SCRIPT_PARAMETER)
+    private String startScript;
+
     @Parameter(defaultValue = "${project.remotePluginRepositories}")
     private List<RemoteRepository> remoteRepos;
 
@@ -65,6 +66,7 @@ public class CollectMojo extends AbstractMojo {
         try {
             final MsCollect getter = MsFactory.MAVEN.get();
 
+            getter.setStartScript(startScript);
             getter.setWorkdir(workdir);
             getter.setFullPath(fullPath);
             getter.setRemoteRepos(remoteRepos);
