@@ -19,7 +19,7 @@
         
     <properties>
         <mvnsh.target>${project.build.directory}/mvnsh</mvnsh.target>
-        <this>${groupId}/${artifactId}/${version}</this>
+        <this>${project.groupId}/${project.artifactId}/${project.version}</this>
     </properties>
     
     <build>

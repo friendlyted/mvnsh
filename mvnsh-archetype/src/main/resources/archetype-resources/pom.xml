@@ -18,16 +18,16 @@
     
     <properties>
         <mvnsh.target>\${dollar}{project.build.directory}/mvnsh</mvnsh.target>
-        <this>\${dollar}{groupId}/\${dollar}{artifactId}/\${dollar}{version}</this>
+        <this>\${dollar}{project.groupId}/\${dollar}{project.artifactId}/\${dollar}{project.version}</this>
     </properties>
     
     <build>
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>${groupId}</groupId>
+                    <groupId>${project.groupId}</groupId>
                     <artifactId>mvnsh-maven-plugin</artifactId>
-                    <version>${version}</version>
+                    <version>${project.version}</version>
                     <executions>
                         <execution>
                             <id>mvnsh-install</id>
@@ -84,7 +84,7 @@
         </pluginManagement>
         <plugins>
             <plugin>
-                <groupId>${groupId}</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>mvnsh-maven-plugin</artifactId>
             </plugin>
             <plugin>
