@@ -64,16 +64,16 @@ public class CollectMojo extends AbstractMojo {
         }
 
         try {
-            final MsCollect getter = MavenMsFactory.getInstance().get();
+            final MsCollect collector = MavenMsFactory.getInstance().collect();
 
-            getter.setStartScript(startScript);
-            getter.setWorkdir(workdir);
-            getter.setFullPath(fullPath);
-            getter.setRemoteRepos(remoteRepos);
-            getter.setRepoSession(repoSession);
-            getter.setRepoSystem(repoSystem);
+            collector.setStartScript(startScript);
+            collector.setWorkdir(workdir);
+            collector.setFullPath(fullPath);
+            collector.setRemoteRepos(remoteRepos);
+            collector.setRepoSession(repoSession);
+            collector.setRepoSystem(repoSystem);
 
-            getter.collect(artifact);
+            collector.collect(artifact);
         } catch (Exception ex) {
             throw new MojoExecutionException("", ex);
         }

@@ -38,7 +38,7 @@ public class MavenMsFactory implements MsFactory {
     }
 
     @Override
-    public MsCollect get() {
+    public MsCollect collect() {
         return new pro.friendlyted.mvnsh.core.processor.MavenMsCollect();
     }
 

@@ -12,7 +12,7 @@ public interface MsFactory {
 
     MsExec exec();
 
-    MsCollect get();
+    MsCollect collect();
 
     MsDownload download();
 
