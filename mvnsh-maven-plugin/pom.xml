@@ -4,7 +4,7 @@
     <parent>
         <groupId>pro.friendlyted</groupId>
         <artifactId>mvnsh</artifactId>
-        <version>1.0</version>
+        <version>1.1-SNAPSHOT</version>
     </parent>
     <artifactId>mvnsh-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>

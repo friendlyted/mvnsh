@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>pro.friendlyted</groupId>
     <artifactId>mvnsh-scripts</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     
     <description>Examples of scripts</description>
@@ -28,7 +28,7 @@
                 <plugin>
                     <groupId>pro.friendlyted</groupId>
                     <artifactId>mvnsh-maven-plugin</artifactId>
-                    <version>1.0</version>
+                    <version>1.1-SNAPSHOT</version>
                     <executions>
                         <execution>
                             <id>mvnsh-install</id>
