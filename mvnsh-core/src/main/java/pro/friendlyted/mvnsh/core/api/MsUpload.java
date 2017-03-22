@@ -3,7 +3,6 @@ package pro.friendlyted.mvnsh.core.api;
 import java.util.List;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
-import pro.friendlyted.mvnsh.core.FilesProvider;
 
 /**
  *

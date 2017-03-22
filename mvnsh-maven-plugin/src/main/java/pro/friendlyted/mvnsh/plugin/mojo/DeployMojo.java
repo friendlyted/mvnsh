@@ -1,13 +1,11 @@
 package pro.friendlyted.mvnsh.plugin.mojo;
 
 import org.apache.maven.RepositoryUtils;
-import org.apache.maven.artifact.repository.MavenArtifactRepository;
 import org.apache.maven.plugins.annotations.InstantiationStrategy;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.plugins.annotations.Parameter;
+import pro.friendlyted.mvnsh.core.MavenMsFactory;
 import pro.friendlyted.mvnsh.core.api.MsDeploy;
-import pro.friendlyted.mvnsh.core.api.MsFactory;
 import pro.friendlyted.mvnsh.core.api.MsUpload;
 
 
@@ -28,7 +26,7 @@ public class DeployMojo extends AbstractUploadMojo {
     
     @Override
     protected MsUpload createUploadProcessor() {
-        final MsDeploy deploy = MsFactory.MAVEN.deploy();
+        final MsDeploy deploy = MavenMsFactory.getInstance().deploy();
         deploy.setArtifactRepository(RepositoryUtils.toRepo(project.getDistributionManagementArtifactRepository()));
         return deploy;
     }

@@ -12,7 +12,7 @@ import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.util.DirectoryScanner;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
-import pro.friendlyted.mvnsh.core.FilesProvider;
+import pro.friendlyted.mvnsh.core.api.FilesProvider;
 import pro.friendlyted.mvnsh.core.api.MsException;
 import pro.friendlyted.mvnsh.core.api.MsUpload;
 

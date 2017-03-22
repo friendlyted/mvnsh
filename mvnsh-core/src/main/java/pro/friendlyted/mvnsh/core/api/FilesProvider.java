@@ -1,4 +1,4 @@
-package pro.friendlyted.mvnsh.core;
+package pro.friendlyted.mvnsh.core.api;
 
 import java.io.File;
 

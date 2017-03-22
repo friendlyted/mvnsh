@@ -8,7 +8,7 @@ import java.util.List;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.artifact.DefaultArtifact;
-import pro.friendlyted.mvnsh.core.FilesProvider;
+import pro.friendlyted.mvnsh.core.api.FilesProvider;
 import static pro.friendlyted.mvnsh.core.api.MvnshConsts.*;
 
 /**

@@ -15,8 +15,8 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
+import pro.friendlyted.mvnsh.core.MavenMsFactory;
 import pro.friendlyted.mvnsh.core.api.MsExec;
-import pro.friendlyted.mvnsh.core.api.MsFactory;
 import pro.friendlyted.mvnsh.core.tools.ExceptionTools;
 import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.*;
 
@@ -61,7 +61,7 @@ public class ExecMojo extends AbstractMojo {
         }
 
         try {
-            final MsExec executor = MsFactory.MAVEN.exec();
+            final MsExec executor = MavenMsFactory.getInstance().exec();
             executor.setWorkdir(workdir);
             executor.setRemoteRepos(remoteRepos);
             executor.setRepoSession(repoSession);

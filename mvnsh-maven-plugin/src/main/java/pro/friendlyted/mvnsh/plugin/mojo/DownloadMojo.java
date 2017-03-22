@@ -14,8 +14,8 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
+import pro.friendlyted.mvnsh.core.MavenMsFactory;
 import pro.friendlyted.mvnsh.core.api.MsDownload;
-import pro.friendlyted.mvnsh.core.api.MsFactory;
 import pro.friendlyted.mvnsh.core.tools.ExceptionTools;
 import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.ARTIFACT_PARAMETER;
 
@@ -54,7 +54,7 @@ public class DownloadMojo extends AbstractMojo {
         }
 
         try {
-            final MsDownload downloader = MsFactory.MAVEN.download();
+            final MsDownload downloader = MavenMsFactory.getInstance().download();
             downloader.setRemoteRepos(remoteRepos);
             downloader.setRepoSession(repoSession);
             downloader.setRepoSystem(repoSystem);

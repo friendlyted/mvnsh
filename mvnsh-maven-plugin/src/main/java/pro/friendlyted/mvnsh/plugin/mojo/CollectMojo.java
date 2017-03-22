@@ -15,7 +15,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
-import pro.friendlyted.mvnsh.core.api.MsFactory;
+import pro.friendlyted.mvnsh.core.MavenMsFactory;
 import pro.friendlyted.mvnsh.core.tools.ExceptionTools;
 import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.*;
 import pro.friendlyted.mvnsh.core.api.MsCollect;
@@ -64,7 +64,7 @@ public class CollectMojo extends AbstractMojo {
         }
 
         try {
-            final MsCollect getter = MsFactory.MAVEN.get();
+            final MsCollect getter = MavenMsFactory.getInstance().get();
 
             getter.setStartScript(startScript);
             getter.setWorkdir(workdir);
