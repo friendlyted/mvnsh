@@ -78,6 +78,7 @@
                         </resources>
                         <outputDirectory>\${dollar}{mvnsh.target}</outputDirectory>
                         <escapeString>\</escapeString>
+                        <encoding>UTF-8</encoding>
                     </configuration>
                 </plugin>
             </plugins>
