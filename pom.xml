@@ -9,10 +9,10 @@
     <description>General parent for all mvnsh projects.</description>
     
     <modules>
-        <module>mvnsh-scripts</module>
         <module>mvnsh-core</module>
         <module>mvnsh-maven-plugin</module>
         <module>mvnsh-archetype</module>
+        <module>mvnsh-scripts</module>
     </modules>
     
     <!--
