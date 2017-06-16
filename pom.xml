@@ -14,7 +14,7 @@
         <module>mvnsh-archetype</module>
         <module>mvnsh-scripts</module>
     </modules>
-    
+
     <!--
     <distributionManagement>
         <repository>
@@ -23,6 +23,10 @@
         </repository>
     </distributionManagement>
     -->
+    
+    <scm>
+        <url>https://github.com/friendlyted/mvnsh.git</url>
+    </scm>
     
     <dependencyManagement>
         <dependencies>
