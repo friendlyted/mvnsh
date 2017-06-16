@@ -17,6 +17,7 @@ import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
 import pro.friendlyted.mvnsh.core.MavenMsFactory;
 import pro.friendlyted.mvnsh.core.api.MsExec;
+import pro.friendlyted.mvnsh.core.api.MsExecutor;
 import pro.friendlyted.mvnsh.core.tools.ExceptionTools;
 import static pro.friendlyted.mvnsh.plugin.mojo.MvnshPluginConsts.*;
 
@@ -41,9 +42,18 @@ public class ExecMojo extends AbstractMojo {
 
     @Parameter(property = WORKDIR_PARAMETER, defaultValue = "${user.home}/.mvnsh")
     private File workdir;
-    
+
     @Parameter(property = FULLPATH_PARAMETER, defaultValue = "true")
     private boolean fullPath;
+
+    @Parameter(property = SCRIPT_PREFIX)
+    private String scriptPrefix;
+
+    @Parameter(property = EXECUTOR_PROGRAM)
+    private String execProgram;
+
+    @Parameter(property = EXECUTOR_PARAMETERS)
+    private List<String> execParameters;
 
     @Parameter(defaultValue = "${project.remotePluginRepositories}")
     private List<RemoteRepository> remoteRepos;
@@ -61,16 +71,27 @@ public class ExecMojo extends AbstractMojo {
         }
 
         try {
-            final MsExec executor = MavenMsFactory.getInstance().exec();
-            executor.setWorkdir(workdir);
-            executor.setRemoteRepos(remoteRepos);
-            executor.setRepoSession(repoSession);
-            executor.setRepoSystem(repoSystem);
-            executor.setFullPath(fullPath);
-            executor.execute(artifact);
+            final MsExec exec = MavenMsFactory.getInstance().exec();
+            exec.setWorkdir(workdir);
+            exec.setRemoteRepos(remoteRepos);
+            exec.setRepoSession(repoSession);
+            exec.setRepoSystem(repoSystem);
+            exec.setFullPath(fullPath);
+            exec.setExecutor(createExecutor());
+            exec.execute(artifact);
         } catch (Exception ex) {
             throw new MojoExecutionException("", ex);
         }
+    }
+
+    private MsExecutor createExecutor() {
+        final MsExecutor result = new MsExecutor();
+
+        result.setParameters(execParameters);
+        result.setProgram(execProgram);
+        result.setScriptPrefix(scriptPrefix);
+
+        return result;
     }
 
 }

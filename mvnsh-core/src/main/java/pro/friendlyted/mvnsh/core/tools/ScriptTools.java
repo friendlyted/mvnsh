@@ -1,7 +1,5 @@
 package pro.friendlyted.mvnsh.core.tools;
 
-import java.io.File;
-
 /**
  *
  * @author Fedor Resnyanskiy
@@ -11,10 +9,9 @@ public class ScriptTools {
     private ScriptTools() {
     }
 
-    public static void executeScript(final File script) {
-        script.setExecutable(true);
+    public static void executeScript(final String[] command) {
         try {
-            final Process p = Runtime.getRuntime().exec(script.getAbsolutePath());
+            final Process p = Runtime.getRuntime().exec(command);
             new Thread(new StreamProxy(p.getInputStream(), System.out)).start();
             new Thread(new StreamProxy(p.getErrorStream(), System.err)).start();
             new Thread(new StreamProxy(System.in, p.getOutputStream())).start();
