@@ -2,6 +2,7 @@ package pro.friendlyted.mvnsh.plugin.mojo;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -39,13 +40,16 @@ public class ExecMojo extends AbstractMojo {
 
     @Parameter(property = ARTIFACT_PARAMETER)
     private String artifact;
+    
+    @Parameter(property = IGNORE_INPNUT, defaultValue = "false")
+    private boolean ignoreInput;
 
     @Parameter(property = WORKDIR_PARAMETER, defaultValue = "${user.home}/.mvnsh")
     private File workdir;
 
     @Parameter(property = FULLPATH_PARAMETER, defaultValue = "true")
     private boolean fullPath;
-
+    
     @Parameter(property = SCRIPT_PREFIX)
     private String scriptPrefix;
 
@@ -90,6 +94,7 @@ public class ExecMojo extends AbstractMojo {
         result.setParameters(execParameters);
         result.setProgram(execProgram);
         result.setScriptPrefix(scriptPrefix);
+        result.setIgnoreInput(ignoreInput);
 
         return result;
     }

@@ -18,9 +18,14 @@ public class MsExecutor {
      */
     private String program;
     /**
-     * Additional parameters for program;
+     * Additional parameters for program.
      */
     private List<String> parameters;
+    /**
+     * Prevent ability to connect to input stream. Some programs (like MS
+     * powershell) don't exit while inout stream is opened.
+     */
+    private boolean ignoreInput;
 
     public String getProgram() {
         return program;
@@ -46,4 +51,11 @@ public class MsExecutor {
         this.parameters = parameters;
     }
 
+    public boolean isIgnoreInput() {
+        return ignoreInput;
+    }
+
+    public void setIgnoreInput(boolean ignoreInput) {
+        this.ignoreInput = ignoreInput;
+    }
 }

@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
@@ -47,7 +48,7 @@ public class MavenMsExec implements MsExec {
         }
         final String[] command = prepareCommand(executor, script.getAbsolutePath());
         System.out.println("command: " + arrayToString(command));
-        ScriptTools.executeScript(command);
+        ScriptTools.executeScript(command, executor != null && executor.isIgnoreInput());
     }
 
     @Override

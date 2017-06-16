@@ -14,4 +14,5 @@ public class MvnshPluginConsts {
     public static final String SCRIPT_PREFIX = PARAMETER_PREFIX + "scriptPrefix";
     public static final String EXECUTOR_PROGRAM = PARAMETER_PREFIX + "execProgram";
     public static final String EXECUTOR_PARAMETERS = PARAMETER_PREFIX + "execParameters";
+    public static final String IGNORE_INPNUT = PARAMETER_PREFIX + "ignoreInput";
 }
