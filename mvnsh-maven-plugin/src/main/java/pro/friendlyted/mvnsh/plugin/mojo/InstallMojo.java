@@ -4,7 +4,7 @@ import org.apache.maven.plugins.annotations.InstantiationStrategy;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import pro.friendlyted.mvnsh.core.MavenMsFactory;
-import pro.friendlyted.mvnsh.core.api.MsUpload;
+import pro.friendlyted.mvnsh.core.api.MsInstall;
 
 /**
  *
@@ -22,7 +22,7 @@ import pro.friendlyted.mvnsh.core.api.MsUpload;
 public class InstallMojo extends AbstractUploadMojo {
 
     @Override
-    protected MsUpload createUploadProcessor() {
+    protected MsInstall createUploadProcessor() {
         return MavenMsFactory.getInstance().install();
     }
 

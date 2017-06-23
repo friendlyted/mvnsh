@@ -11,9 +11,13 @@
     <!--
     <distributionManagement>
         <repository>
-            <id>test</id>
-            <url>http://127.0.0.1:8081/artifactory/example-repo-local/</url>
+            <id>ISC-release</id>
+            <url>http://10.31.60.90:8081/artifactory/libs-release-local</url>
         </repository>
+        <snapshotRepository>
+            <id>ISC-snapshot</id>
+            <url>http://10.31.60.90:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
     -->
 

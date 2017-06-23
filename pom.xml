@@ -14,19 +14,32 @@
         <module>mvnsh-archetype</module>
         <module>mvnsh-scripts</module>
     </modules>
-
+    
     <!--
     <distributionManagement>
         <repository>
-            <id>test</id>
-            <url>http://127.0.0.1:8081/artifactory/example-repo-local/</url>
+            <id>ISC-release</id>
+            <url>http://10.31.60.90:8081/artifactory/libs-release-local</url>
         </repository>
+        <snapshotRepository>
+            <id>ISC-snapshot</id>
+            <url>http://10.31.60.90:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
     </distributionManagement>
     -->
     
     <scm>
         <url>https://github.com/friendlyted/mvnsh.git</url>
     </scm>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.version>3.3.9</maven.version>
+        <aether.version>1.1.0</aether.version>
+    </properties>
+    
     
     <dependencyManagement>
         <dependencies>
@@ -39,7 +52,7 @@
             <dependency>
                 <groupId>org.apache.maven</groupId>
                 <artifactId>maven-plugin-api</artifactId>
-                <version>3.3.9</version>
+                <version>${maven.version}</version>
             </dependency>
 
             <dependency>
@@ -48,17 +61,17 @@
                 <version>3.5</version>
                 <scope>provided</scope>
             </dependency>
-            
+
             <dependency>
-                <groupId>org.apache.maven</groupId>
-                <artifactId>maven-core</artifactId>
-                <version>3.3.9</version>
+                <groupId>org.eclipse.aether</groupId>
+                <artifactId>aether-util</artifactId>
+                <version>${aether.version}</version>
             </dependency>
-            
+                                    
             <dependency>
                 <groupId>org.eclipse.aether</groupId>
                 <artifactId>aether-api</artifactId>
-                <version>1.1.0</version>
+                <version>${aether.version}</version>
             </dependency>
             
             <dependency>
@@ -100,12 +113,7 @@
         </dependencies>
     </dependencyManagement>
     
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
-    
+
     <build>
         <pluginManagement>
             <plugins>
