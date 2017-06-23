@@ -8,7 +8,6 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.Parameter;
-import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.util.DirectoryScanner;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
@@ -28,11 +27,17 @@ public abstract class AbstractUploadMojo extends AbstractMojo {
     @Parameter(defaultValue = "${repositorySystemSession}", readonly = true)
     private RepositorySystemSession repoSession;
 
-    @Parameter(defaultValue = "${project}", readonly = true)
-    protected MavenProject project;
-
     @Parameter
     private List<DirectoryScanner> scriptsList;
+
+    @Parameter(defaultValue = "${project.artifactId}")
+    private String artifactId;
+
+    @Parameter(defaultValue = "${project.groupId}")
+    private String groupId;
+
+    @Parameter(defaultValue = "${project.version}")
+    private String version;
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
@@ -53,9 +58,9 @@ public abstract class AbstractUploadMojo extends AbstractMojo {
     protected abstract MsUpload createUploadProcessor();
 
     protected void setupUploadProcessor(final MsUpload upload) {
-        upload.setGroupId(project.getGroupId());
-        upload.setArtifactId(project.getArtifactId());
-        upload.setVersion(project.getVersion());
+        upload.setGroupId(groupId);
+        upload.setArtifactId(artifactId);
+        upload.setVersion(version);
         upload.setRepoSession(repoSession);
         upload.setRepoSystem(repoSystem);
         upload.setScriptsList(
